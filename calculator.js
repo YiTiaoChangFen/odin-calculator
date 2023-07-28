@@ -62,9 +62,9 @@ class Calculator {
             default:
                 break;
         }
-        this.currentOperand = '';
+        this.currentOperand = computation;
         this.operation = undefined;
-        this.previousOperand = computation;
+        this.previousOperand = '';
 
     }
 
@@ -92,8 +92,8 @@ class Calculator {
         this.currentOperandText.innerText = this.getDisplayNumber(this.currentOperand);
         if (this.operation != null) {
             this.previousOperandText.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`;
-        } else if (this.operation == null) {
-            this.previousOperandText.innerText = this.getDisplayNumber(this.previousOperand);
+        } else {
+            this.previousOperandText.innerText = '';
         }
         
     }
